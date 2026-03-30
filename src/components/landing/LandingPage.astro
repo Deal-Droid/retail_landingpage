@@ -378,8 +378,36 @@ const languageHref = locale === 'th' ? '/en/' : '/';
 
   .outcome-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
     gap: 0.7rem;
+    align-items: center;
+  }
+
+  .outcome-header {
+    margin-bottom: 0.2rem;
+  }
+
+  .before-label {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #b91c1c;
+    text-align: center;
+  }
+
+  .after-label {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #059669;
+    text-align: center;
+  }
+
+  .outcome-sep {
+    color: var(--muted);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
   }
 
   .before,
@@ -387,16 +415,19 @@ const languageHref = locale === 'th' ? '/en/' : '/';
     margin: 0;
     padding: 0.8rem 0.9rem;
     border-radius: 0.75rem;
+    font-size: 0.95rem;
   }
 
   .before {
-    background: rgba(239, 68, 68, 0.12);
+    background: rgba(239, 68, 68, 0.08);
     color: #b91c1c;
+    border: 1px solid rgba(239, 68, 68, 0.2);
   }
 
   .after {
-    background: rgba(79, 70, 229, 0.12);
-    color: #4f46e5;
+    background: rgba(16, 185, 129, 0.08);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
   }
 
   .faq-list {
@@ -528,6 +559,18 @@ const languageHref = locale === 'th' ? '/en/' : '/';
 
     .btn-text {
       text-align: center;
+    }
+
+    .outcome-header {
+      display: none;
+    }
+
+    .outcome-sep {
+      display: none;
+    }
+
+    .outcome-row {
+      gap: 0.5rem;
     }
   }
 </style>
