@@ -37,7 +37,6 @@ const links = {
   heroDemo: withUtm(baseUrls.demo, 'hero_demo'),
   heroLine: withUtm(baseUrls.line, 'hero_line_oa'),
   heroTrial: withUtm(baseUrls.trial, 'hero_trial'),
-  solutionDemo: withUtm(baseUrls.demo, 'solution_demo'),
   featureLine: withUtm(baseUrls.line, 'feature_line_oa'),
   featureTrial: withUtm(baseUrls.trial, 'feature_trial'),
   finalDemo: withUtm(baseUrls.demo, 'final_demo'),
@@ -76,7 +75,7 @@ const languageHref = locale === 'th' ? '/en/' : '/';
   <FeaturesSection
     copy={copy.featureSection}
     cta={copy.cta}
-    links={{ solutionDemo: links.solutionDemo, featureLine: links.featureLine, featureTrial: links.featureTrial }}
+    links={{ featureLine: links.featureLine, featureTrial: links.featureTrial }}
   />
   <AppPreviewSection copy={copy.appPreview} />
   <FAQSection copy={copy.faq} />
@@ -322,6 +321,41 @@ const languageHref = locale === 'th' ? '/en/' : '/';
     gap: 0.95rem;
   }
 
+  .pairs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.95rem;
+    margin-top: 1.4rem;
+  }
+
+  .pair-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 0.95rem;
+    padding: 1rem 1.1rem;
+  }
+
+  .pair-pain {
+    margin: 0 0 0.65rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    background: rgba(239, 68, 68, 0.08);
+    color: #b91c1c;
+    font-size: 0.95rem;
+    border-left: 3px solid rgba(239, 68, 68, 0.4);
+  }
+
+  .pair-fix {
+    margin: 0;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    background: rgba(16, 185, 129, 0.08);
+    color: #059669;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-left: 3px solid rgba(16, 185, 129, 0.4);
+  }
+
   .four-cols {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -517,7 +551,8 @@ const languageHref = locale === 'th' ? '/en/' : '/';
     .hero-grid,
     .four-cols,
     .two-cols,
-    .outcome-row {
+    .outcome-row,
+    .pairs {
       grid-template-columns: 1fr;
     }
 

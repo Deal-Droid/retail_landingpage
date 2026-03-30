@@ -1,9 +1,6 @@
 ---
 interface Props {
   copy: {
-    solutionHeadline: string;
-    solutionLead: string;
-    solutions: Array<{ title: string; body: string }>;
     featureHeadline: string;
     features: Array<{ title: string; feature: string; benefit: string }>;
     resultsHeadline: string;
@@ -17,7 +14,6 @@ interface Props {
     trial: string;
   };
   links: {
-    solutionDemo: string;
     featureLine: string;
     featureTrial: string;
   };
@@ -28,26 +24,6 @@ const { copy, cta, links } = Astro.props;
 
 <section id="features" class="section alt">
   <div class="shell">
-    <h2>{copy.solutionHeadline}</h2>
-    <p class="section-lead">{copy.solutionLead}</p>
-
-    <div class="cards two-cols">
-      {
-        copy.solutions.map((item) => (
-          <article class="card">
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-          </article>
-        ))
-      }
-    </div>
-
-    <div class="inline-cta">
-      <a class="btn btn-solid" href={links.solutionDemo}>{cta.demo}</a>
-    </div>
-
-    <div class="section-divider"></div>
-
     <h2>{copy.featureHeadline}</h2>
     <div class="cards two-cols">
       {

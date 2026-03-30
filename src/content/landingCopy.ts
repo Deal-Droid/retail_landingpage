@@ -27,12 +27,9 @@ export type LandingCopy = {
   pain: {
     headline: string;
     lead: string;
-    items: Array<{ title: string; body: string }>;
+    pairs: Array<{ pain: string; solution: string }>;
   };
   featureSection: {
-    solutionHeadline: string;
-    solutionLead: string;
-    solutions: Array<{ title: string; body: string }>;
     featureHeadline: string;
     features: Array<{ title: string; feature: string; benefit: string }>;
     resultsHeadline: string;
@@ -96,53 +93,29 @@ export const landingCopy: Record<Locale, LandingCopy> = {
       ],
     },
     pain: {
-      headline:
-        "ถ้าเจอสิ่งเหล่านี้ทุกวัน คุณกำลังเสียทั้งต้นทุนและโอกาสขายแบบไม่รู้ตัว",
-      lead: "หลายร้านเสียยอดเพราะตอบช้า ตอบไม่คงที่ และทีมล้าจากแชทปริมาณสูง",
-      items: [
+      headline: "ปัญหาที่ร้านรีเซลล์เจอทุกวัน — และวิธีที่ DealDroid ช่วย",
+      lead: "ทุกปัญหามีทางแก้ ไม่ต้องจ้างคนเพิ่ม ไม่ต้องทำ flow เอง",
+      pairs: [
         {
-          title: "ลูกค้าทักหลัง 5 โมง แต่ไม่มีคนตอบ",
-          body: "ช่วงที่ลูกค้าพร้อมซื้อ กลับไม่มีคนตอบ ทำให้เสียออเดอร์",
+          pain: "ลูกค้าทักหลัง 5 โมง ไม่มีคนตอบ เสียออเดอร์",
+          solution: "AI ตอบอัตโนมัติ 24/7 เก็บทุกโอกาสขาย",
         },
         {
-          title: "ทีมแอดมินรับอารมณ์ลูกค้าจนหมดไฟ",
-          body: "แชทยากต่อเนื่องทำให้คุณภาพคำตอบตก แม้ทีมจะพยายามเต็มที่",
+          pain: "ทีมแอดมินล้า คุณภาพตกเพราะแชทเยอะ",
+          solution: "AI รับแชทยาก ทีมโฟกัสแค่ปิดการขาย",
         },
         {
-          title: "พนักงานเข้าออกบ่อย ต้องเทรนซ้ำไม่จบ",
-          body: "ต้องสอนงานซ้ำบ่อย และคุมมาตรฐานตอบแชทยาก",
+          pain: "พนักงานลาบ่อย เทรนใหม่ซ้ำ มาตรฐานไม่คงที่",
+          solution: "คุณภาพคำตอบคงที่ ไม่กระทบจากคนเข้าออก",
         },
         {
-          title: "ลูกค้าลังเลเพราะเทียบสินค้าไม่ทันใจ",
-          body: "ตอบช้าหรือข้อมูลไม่ครบ ลูกค้าหลุดก่อนจ่ายเงิน",
+          pain: "ลูกค้าลังเล เทียบสินค้าไม่ทัน หลุดก่อนจ่าย",
+          solution: "ตอบเปรียบเทียบได้ทันที ลดการหลุดของลูกค้า",
         },
       ],
     },
     featureSection: {
-      solutionHeadline:
-        "AI ชั้นเดียวที่ช่วยทั้งลดภาระทีม และเพิ่มความเร็วในการปิดขาย",
-      solutionLead:
-        "ไม่ต้องทำ flow ซับซ้อน ระบบตอบจากข้อมูลจริงของร้านคุณแบบเป็นธรรมชาติ",
-      solutions: [
-        {
-          title: "ครอบคลุมการขายตลอด 24 ชั่วโมง",
-          body: "ลูกค้าเข้ามาเวลาไหนก็ได้คำตอบทันที เก็บทุกโอกาสขายแม้นอกเวลาทีมงาน",
-        },
-        {
-          title: "ตอบสินค้าได้แม่นจาก LLM + RAG",
-          body: "ตอบสเปก จุดต่าง รุ่นที่เหมาะ และเงื่อนไขต่างๆ ได้ชัดเจนสม่ำเสมอ",
-        },
-        {
-          title: "คุยเป็นธรรมชาติ เหมือนทีมงานจริง",
-          body: "เข้าใจบริบทการถามต่อเนื่อง ลดความรู้สึกว่าเป็นบอทสคริปต์แข็งๆ",
-        },
-        {
-          title: "ส่งต่อ Human Sales อย่างเนียน",
-          body: "เมื่อลูกค้าพร้อมซื้อ ระบบส่งต่อพร้อมบริบทให้ทีมปิดดีลได้เร็วขึ้น",
-        },
-      ],
-      featureHeadline:
-        "ฟีเจอร์ที่ผูกกับผลลัพธ์ธุรกิจจริง ไม่ใช่เดโมสวยอย่างเดียว",
+      featureHeadline: "ฟีเจอร์ที่ส่งผลจริงต่อยอดขาย",
       features: [
         {
           title: "Product Brain ด้วย LLM + RAG",
@@ -288,53 +261,29 @@ export const landingCopy: Record<Locale, LandingCopy> = {
       ],
     },
     pain: {
-      headline:
-        "If this is your daily reality, you are losing margin and sales momentum",
-      lead: "Most large stores do not lose sales from low demand. They lose sales from slow replies, inconsistent answers, and exhausted support teams.",
-      items: [
+      headline: "Daily problems that cost you sales — and how DealDroid fixes them",
+      lead: "Every problem has a solution. No extra hiring needed, no complex flow setup.",
+      pairs: [
         {
-          title: "Customers ask after 5 PM but your team is offline",
-          body: "Prime buying moments are missed simply because no one is available to answer instantly.",
+          pain: "Customers message after 5 PM but no one replies, orders lost",
+          solution: "AI responds automatically 24/7, capturing every sales opportunity",
         },
         {
-          title: "Admins absorb customer pressure all day",
-          body: "Emotion-heavy chats reduce response quality during high-volume periods.",
+          pain: "Admin team burns out, quality drops under heavy chat load",
+          solution: "AI handles tough chats, team focuses only on closing sales",
         },
         {
-          title: "High turnover creates endless retraining",
-          body: "Your team spends time rebuilding consistency instead of moving deals forward.",
+          pain: "High staff turnover, constant retraining, inconsistent answers",
+          solution: "Response quality stays stable regardless of team changes",
         },
         {
-          title: "Comparison questions are answered too slowly",
-          body: "Buyers hesitate and drop before checkout when details are delayed or unclear.",
+          pain: "Buyers hesitate, product comparisons too slow, drop before checkout",
+          solution: "Instant product comparisons reduce customer drop-off",
         },
       ],
     },
     featureSection: {
-      solutionHeadline:
-        "One AI layer that reduces pressure and drives conversion",
-      solutionLead:
-        "No rigid conversation flow building. DealDroid responds naturally from your real product and knowledge data.",
-      solutions: [
-        {
-          title: "Always-On Sales Coverage",
-          body: "Instant responses at any hour so after-hours shoppers stay engaged.",
-        },
-        {
-          title: "Accurate Product Responses with LLM + RAG",
-          body: "Clear, reliable answers for specs, comparisons, and decision-critical details.",
-        },
-        {
-          title: "Human-Like Conversation Quality",
-          body: "Understands context and follows natural conversation flow.",
-        },
-        {
-          title: "Seamless Handoff to Human Sales",
-          body: "Transfers with context when intent is high, so closers can move quickly.",
-        },
-      ],
-      featureHeadline:
-        "Capabilities tied to business outcomes, not just demo visuals",
+      featureHeadline: "Features That Drive Real Sales Results",
       features: [
         {
           title: "LLM + RAG Product Brain",

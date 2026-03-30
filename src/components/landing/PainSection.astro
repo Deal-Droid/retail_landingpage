@@ -3,7 +3,7 @@ interface Props {
   copy: {
     headline: string;
     lead: string;
-    items: Array<{ title: string; body: string }>;
+    pairs: Array<{ pain: string; solution: string }>;
   };
 }
 
@@ -15,12 +15,12 @@ const { copy } = Astro.props;
     <h2>{copy.headline}</h2>
     <p class="section-lead">{copy.lead}</p>
 
-    <div class="cards four-cols">
+    <div class="pairs">
       {
-        copy.items.map((item) => (
-          <article class="card">
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
+        copy.pairs.map((item) => (
+          <article class="pair-card">
+            <p class="pair-pain">{item.pain}</p>
+            <p class="pair-fix">{item.solution}</p>
           </article>
         ))
       }
