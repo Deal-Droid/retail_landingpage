@@ -1,0 +1,97 @@
+---
+interface Props {
+  copy: {
+    headline: string;
+    subheadline: string;
+    features: string[];
+  };
+}
+
+const { copy } = Astro.props;
+---
+
+<section id="intent" class="section alt">
+  <div class="shell">
+    <h2>{copy.headline}</h2>
+    <p class="section-lead">{copy.subheadline}</p>
+
+    <div class="intent-container">
+      <figure class="intent-image">
+        <img
+          src="/images/intent_page.png"
+          alt="DealDroid intent configuration page showing context settings and AI response templates"
+          loading="lazy"
+        />
+        <figcaption>Intent Management: Define AI behavior for every scenario</figcaption>
+      </figure>
+
+      <aside class="intent-capabilities">
+        {
+          copy.features.map((feature) => (
+            <div class="capability-item">
+              <p>{feature}</p>
+            </div>
+          ))
+        }
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intent-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1.6rem;
+  }
+
+  .intent-image {
+    margin: 0;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 20px 48px rgba(107, 114, 128, 0.15);
+    border: 1px solid rgba(229, 231, 235, 0.6);
+  }
+
+  .intent-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .intent-image figcaption {
+    padding: 0.8rem 1rem;
+    background: #f9fafb;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+    border-top: 1px solid rgba(229, 231, 235, 0.5);
+  }
+
+  .intent-capabilities {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .capability-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .capability-item p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  @media (max-width: 1024px) {
+    .intent-container {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+    }
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+interface Props {
+  copy: {
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    microcopy: string;
+    chips: string[];
+  };
+  cta: {
+    demo: string;
+    line: string;
+    trial: string;
+  };
+  links: {
+    demo: string;
+    line: string;
+    trial: string;
+  };
+}
+
+const { copy, cta, links } = Astro.props;
+---
+
+<section id="hero" class="hero section">
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h1>{copy.headline}</h1>
+      <p class="lead">{copy.subheadline}</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href={links.demo}>{cta.demo}</a>
+        <a class="btn btn-outline" href={links.line}>{cta.line}</a>
+        <a class="btn btn-text" href={links.trial}>{cta.trial}</a>
+      </div>
+      <p class="microcopy">{copy.microcopy}</p>
+    </div>
+
+    <aside class="hero-image" aria-label="DealDroid Product Demo">
+      <img
+        src="/images/chat.png"
+        alt="DealDroid chat interface showing real-time customer conversations with AI responses"
+        loading="eager"
+      />
+    </aside>
+  </div>
+</section>

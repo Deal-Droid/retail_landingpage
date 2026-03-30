@@ -1,0 +1,33 @@
+---
+interface Props {
+  copy: {
+    headline: string;
+    lead: string;
+  };
+  cta: {
+    demo: string;
+    line: string;
+    trial: string;
+  };
+  links: {
+    demo: string;
+    line: string;
+    trial: string;
+  };
+}
+
+const { copy, cta, links } = Astro.props;
+---
+
+<section id="final-cta" class="section final">
+  <div class="shell final-wrap">
+    <h2>{copy.headline}</h2>
+    <p class="section-lead">{copy.lead}</p>
+
+    <div class="hero-actions centered">
+      <a class="btn btn-solid" href={links.demo}>{cta.demo}</a>
+      <a class="btn btn-outline" href={links.line}>{cta.line}</a>
+      <a class="btn btn-text" href={links.trial}>{cta.trial}</a>
+    </div>
+  </div>
+</section>

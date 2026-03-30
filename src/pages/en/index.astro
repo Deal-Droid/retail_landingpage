@@ -1,0 +1,12 @@
+---
+import LandingPage from '../../components/landing/LandingPage.astro';
+import Layout from '../../layouts/Layout.astro';
+import { landingCopy } from '../../content/landingCopy';
+
+const locale = 'en';
+const meta = landingCopy[locale].meta;
+---
+
+<Layout title={meta.title} description={meta.description} lang={locale}>
+  <LandingPage locale={locale} />
+</Layout>

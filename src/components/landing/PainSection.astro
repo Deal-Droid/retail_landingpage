@@ -1,0 +1,29 @@
+---
+interface Props {
+  copy: {
+    headline: string;
+    lead: string;
+    items: Array<{ title: string; body: string }>;
+  };
+}
+
+const { copy } = Astro.props;
+---
+
+<section id="pain" class="section">
+  <div class="shell">
+    <h2>{copy.headline}</h2>
+    <p class="section-lead">{copy.lead}</p>
+
+    <div class="cards four-cols">
+      {
+        copy.items.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
