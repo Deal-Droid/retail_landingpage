@@ -24,7 +24,6 @@ const { copy } = Astro.props;
 
     <div class="story-layout">
       <div class="story-topbar">
-        <p class="story-topbar-kicker">Product Tour</p>
         <nav class="story-nav" aria-label="DealDroid product tour">
           {copy.previews.map((preview, idx) => (
             <button
@@ -35,7 +34,6 @@ const { copy } = Astro.props;
             >
               <span class="story-tab-index">0{idx + 1}</span>
               <span class="story-tab-label">{preview.caption}</span>
-              <span class="story-tab-summary">{preview.features[0]}</span>
             </button>
           ))}
         </nav>
